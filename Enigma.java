@@ -21,12 +21,33 @@ public class Enigma{
 
     public String decrypt(String message){        
         //TODO
+        return "abc";
     }
 
 
     
     public String encrypt(String message){
         //TODO
+        String result = ""; //build encrypted string
+        for (int i = 0; i < message.length(); i++) {
+            char c = message.charAt(i);
+            
+            //Find index of c in inner rotor
+            int idx = rotors[0].indexOf(c);
+            //Map through the middle rotor
+            char map = rotors[1].charAt(idx);
+            //Find the index of map in the middle rotor
+            idx = rotors[1].indexOf(map);
+            //Map through the inner rotor
+            map = rotors[0].charAt(idx);
+            //append the result
+            result += map;
+
+            rotate();
+
+        }
+
+        return result;
     }
 
     
