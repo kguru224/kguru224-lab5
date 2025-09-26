@@ -13,32 +13,34 @@ public class Rotor {
         }
     }
 
-
-    //Rotate clock wise; the last character moves to the front
-    // returns true if after this rotation the top equals the starting character. 
     public boolean rotate() {
-        // get last char
+
+        // get the last character
         char last = this.rotorValues.charAt(this.rotorValues.length() - 1);
 
-        // new string: last char + everything else except last
+        // new string, includes the last character and everything else except the last
         this.rotorValues = last + this.rotorValues.substring(0, this.rotorValues.length() - 1);
 
-        // true if back to starting top character
-        return this.rotorValues.charAt(0) == this.startChar;
+        // return true if back to starting top character
+        return this.rotorValues.charAt(0) == this.startChar; 
+
     }
 
 
-    // Manual indexOf using only charAt
+    // find the index of the character
     public int indexOf(char c) {
         for (int i = 0; i < this.rotorValues.length(); i++) {
-            if (this.rotorValues.charAt(i) == c) {
+            if (this.rotorValues.charAt(i) == c){
                 return i;
             }
         }
-        return -1; // should not happen for valid input
+
+        // should not happen if the input is valid
+        return -1; 
     }
 
-    // Expose character at index
+
+    // Character at index
     public char charAt(int idx) {
         return this.rotorValues.charAt(idx);
     }

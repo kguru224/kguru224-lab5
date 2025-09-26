@@ -20,7 +20,7 @@ public class Enigma {
     public String decrypt(String message) {
         String result = "";
 
-        for (int i = 0; i < result.length(); i++) {
+        for (int i = 0; i < message.length(); i++) {
             char c = message.charAt(i);
 
             //find c on the outer rotor
@@ -48,7 +48,7 @@ public class Enigma {
     public String encrypt(String message) {
         String result = "";
 
-        for (int i = 0; i < result.length(); i++) {
+        for (int i = 0; i < message.length(); i++) {
             char c = message.charAt(i);
 
             //find c on the inner rotor
@@ -67,7 +67,7 @@ public class Enigma {
             result = result + map;
 
             //rotate it 
-            rotate()
+            rotate();
         }
 
         return result;
